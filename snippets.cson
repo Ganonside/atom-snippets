@@ -1,0 +1,173 @@
+'.source.js':
+  'console.log':
+    'prefix': 'log'
+    'body': 'console.log(${1:"${2:log}"});$3'
+  'console.error':
+    'prefix': 'error'
+    'body': 'console.error(${1:"${2:Error$3:}$4"});$5'
+  'require':
+    'prefix': 'req'
+    'body': 'var $1 = require(\'${2:./}$3\');'
+  'multiline comment':
+    'prefix': '/**'
+    'body': """
+      /**
+       * ${1:Your comment here}
+       */
+    """
+  'todo':
+    'prefix': 'todo'
+    'body': '// TODO: $1'
+  'es6 class':
+    'prefix': 'class6'
+    'body': """
+      class $1 {
+        constructor(params) {
+          let fields = {
+            $2
+          } = params;
+        }
+      }
+
+      module.exports = $1;
+    """
+  'es6 static class':
+    'prefix': 'class6stat'
+    'body': """
+      class ${1:className} {
+
+        static ${2:someStaticMethod}(${3:params}) {
+          $4
+        }
+        $5
+      }
+
+      module.exports = ${1:className};
+    """
+  'method':
+    'prefix': 'm'
+    'body': """
+      $1($2) {
+        $3
+      }
+    """
+  'static method':
+    'prefix': 'sm'
+    'body': """
+      static $1($2) {
+        $3
+      }
+    """
+  'method with jsdoc':
+    'prefix': 'mdoc'
+    'body': """
+      /**
+       * ${4:description}
+       *
+       * @param {${3:type}} $2
+       */
+      $1($2) {
+        $5
+      }
+    """
+  'static method with jsdoc':
+    'prefix': 'smdoc'
+    'body': """
+      /**
+       * ${4:description}
+       *
+       * @param {${3:type}} $2
+       */
+      static $1($2) {
+        $5
+      }
+    """
+  'getter':
+    'prefix': 'get'
+    'body': """
+      get $1() {
+        return $2;
+      }
+      $3
+    """
+  'setter':
+    'prefix': 'set'
+    'body': """
+      set $1($2) {
+        let temp = this.$2
+        this.$2 = $2;
+
+        return temp;
+      }
+      $3
+    """
+  'es6 promise':
+    'prefix': 'prom6'
+    'body': """
+      $1($2)
+        .then(res => {
+          $3
+        }).catch(err => {
+          $4
+        });
+    """
+  'new es6 promise':
+    'prefix': 'newprom6'
+    'body': """
+      new Promise((resolve, reject) => {
+        $1
+      });
+    """
+  'switch statement':
+    'prefix': 'switch'
+    'body': """
+      switch($1) {
+        case $2:
+          $3
+          break;
+        $4
+      }
+    """
+  'switch case':
+    'prefix': 'case'
+    'body': """
+      case $1:
+        $2
+        ${3:break;}
+      $4
+    """
+  'try catch':
+    'prefix': 'tc'
+    'body': """
+      try {
+        $1
+      }
+      catch (err) {
+        $2
+      }$3
+    """
+  'try catch finally':
+    'prefix': 'tcf'
+    'body': """
+      try {
+        $1
+      }
+      catch (err) {
+        $2
+      }
+      finally {
+        $3
+      }$4
+    """
+
+'.source.jsx':
+  'React Element':
+    'prefix': 'el'
+    'body': """
+      <$1 $2>
+        $3
+      </$1>$4
+    """
+  'Self Closing React Element':
+    'prefix': 'elc'
+    'body': '<$1 $2/>$3'
