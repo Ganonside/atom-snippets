@@ -22,17 +22,37 @@
     'prefix': 'class6'
     'body': """
       class $1 {
-        constructor(params) {
+
+        constructor(${2:params}) {
           let fields = {
-            $2
-          } = params;
+            $3
+          } = ${2:params};
+        }
+      }
+
+      module.exports = $1;
+    """
+  'es6 class with jsdoc':
+    'prefix': 'class6doc'
+    'body': """
+      /**
+       * The description of this class
+       *
+       * @class
+       */
+      class $1 {
+
+        constructor(${2:params}) {
+          let fields = {
+            $3
+          } = ${2:params};
         }
       }
 
       module.exports = $1;
     """
   'es6 static class':
-    'prefix': 'class6stat'
+    'prefix': 'sclass6'
     'body': """
       class ${1:className} {
 
@@ -58,7 +78,7 @@
         $3
       }
     """
-  'method with jsdoc':
+  'method w/ jsdoc':
     'prefix': 'mdoc'
     'body': """
       /**
@@ -70,7 +90,7 @@
         $5
       }
     """
-  'static method with jsdoc':
+  'static method w/ jsdoc':
     'prefix': 'smdoc'
     'body': """
       /**
@@ -128,7 +148,7 @@
         $4
       }
     """
-  'switch case':
+  'case statement':
     'prefix': 'case'
     'body': """
       case $1:
@@ -161,13 +181,32 @@
     """
 
 '.source.jsx':
+  'React Create Class es6':
+    'prefix': 'rc6'
+    'body': """
+      var React = require('react');
+
+      var $1 = React.createClass({
+
+        render() {
+          $3
+
+          return (
+            ${2:<div />}
+          );
+        }
+
+      });
+
+      module.exports = $1;
+    """
   'React Element':
-    'prefix': 'el'
+    'prefix': 'rel'
     'body': """
       <$1 $2>
         $3
       </$1>$4
     """
-  'Self Closing React Element':
-    'prefix': 'elc'
+  'Self-closing React Element':
+    'prefix': 'relc'
     'body': '<$1 $2/>$3'
