@@ -8,12 +8,12 @@ The following lists show the snippet names followed by their prefixes.
 
 #### `log` -> console.log
 ```
-console.log(${1:"${2:log}"});$3
+console.log(${2:`${1:log}`});$3
 ```
 
 #### `error` -> console.error
 ```
-console.error(${1:"${2:Error$3:}$4"});$5
+console.error(${3:`${2:Error: }$1`});$4
 ```
 
 #### `req` -> require
