@@ -1,10 +1,10 @@
 '.source.js':
   'console.log':
     'prefix': 'log'
-    'body': 'console.log(${1:"${2:log}"});$3'
+    'body': 'console.log(${2:`${1:log}`});$3'
   'console.error':
     'prefix': 'error'
-    'body': 'console.error(${1:"${2:Error$3:}$4"});$5'
+    'body': 'console.error(${3:`${2:Error: }$1`});$4'
   'require':
     'prefix': 'req'
     'body': 'var $1 = require(\'${2:./}$3\');'
