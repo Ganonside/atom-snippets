@@ -2,7 +2,14 @@
 
 This repo contains all the snippets I have created in atom.
 
-The following lists show the snippet names followed by their prefixes.
+This documentation uses the following format:
+
+-------------------
+#### `prefix` -> nameOfSnippet
+```
+expanded snippet
+```
+-------------------
 
 ## For `.js` Files
 
