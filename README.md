@@ -2,9 +2,13 @@
 
 This repo contains all the snippets I have created in atom.
 
-This documentation uses the following format:
+To use these snippets, navigate to my `snippets.cson` file and copy the contents into your local `snippets.cson` file.
+
+Your local `snippets.cson` file can be found by `Atom -> Open Your Snippets` (on Mac) or `File -> Open Your Snippets` (on Windows).
 
 -------------------
+This documentation uses the following format:
+
 #### `prefix` -> nameOfSnippet
 ```
 expanded snippet
